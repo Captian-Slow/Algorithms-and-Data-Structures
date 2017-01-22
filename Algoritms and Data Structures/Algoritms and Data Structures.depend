@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1485087388 source:/home/thebournegenius/Documents/Programming/Algoritms and Data Structures/main.cpp
+	<iostream>
+	"linkedList.h"
+
+1485085653 /home/thebournegenius/Documents/Programming/Algoritms and Data Structures/include/linkedList.h
+
+1485087190 source:/home/thebournegenius/Documents/Programming/Algoritms and Data Structures/src/linkedList.cpp
+	"linkedList.h"
+	<iostream>
+
