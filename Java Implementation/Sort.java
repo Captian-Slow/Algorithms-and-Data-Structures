@@ -158,6 +158,49 @@ public class Sort
 
         return sortArray;
     }
+
+    public static  int[] QuickSort(int[] sortArray)
+    {
+        QuickSort(sortArray, 0, sortArray.length - 1);
+        return sortArray;
+    }
+
+    private static void QuickSort(int[] sortArray, int left, int right)
+    {
+        if(left >= right)
+            return;
+
+        int pivot = sortArray[(left + right) / 2];
+        int index = partition(sortArray, left, right, pivot);
+        QuickSort(sortArray, left, index - 1);
+        QuickSort(sortArray, index, right);
+    }
+
+    private static int partition(int[] sortArray, int left, int right, int pivot)
+    {
+        while (left <= right)
+        {
+             while (sortArray[left] < pivot)
+             {
+                 left++;
+             }
+
+             while (sortArray[right] > pivot)
+             {
+                 right--;
+             }
+
+             if(left <= right)
+             {
+                 swap(sortArray, left, right);
+                 left++;
+                 right--;
+             }
+
+        }
+
+        return left;
+    }
     
     private static int findMin(int[] array, int startIndex)
     {
@@ -179,6 +222,10 @@ public class Sort
 
 
 }
+
+
+
+
 
 
 
