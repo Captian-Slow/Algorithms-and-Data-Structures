@@ -1,6 +1,6 @@
-#include<tower_of_hanoi_lib.h>
 #include<iostream>
 #include<conio.h>
+#include<recursive_lib.h>
 #define SOURCE "Source Tower"
 #define AUX "Aux Tower"
 #define DEST "Destination Tower"
