@@ -56,7 +56,8 @@
                 "C:/Program Files (x86)/CodeBlocks/MinGW/include",
                 "${workspaceRoot}",
                 "${workspaceRoot}/C ++ Implementation/Recursive_Library",
-                "${workspaceRoot}/C ++ Implementation/Recursive_programs_test/include"
+                "${workspaceRoot}/C ++ Implementation/Recursive_programs_test/include",
+                "${workspaceRoot}/Algorithms/Sorting"
             ],
             "defines": [
                 "_DEBUG",
