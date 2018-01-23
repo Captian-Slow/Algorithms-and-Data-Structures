@@ -13,7 +13,7 @@ void main() {
       //    printf("\n%d", data[j]);
       // }
    }
-   bubbleSort(data, n);
+   insertion_sort(data, n);
    for(i = 0; i < n; i++){
       printf("\n%d", data[i]);
    }

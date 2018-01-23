@@ -60,7 +60,26 @@ void selection_sort(int *data, int length) {
       printf("\n");
       for(j = 0; j < length; j++){
           printf(" %d", data[j]);
-       }
-       
+       }       
    }
+}
+
+void insertion_sort(int *data, int length) {
+
+    if (length == 1) {
+        return;
+    }
+
+    int i, j, num;
+
+    for(i = 1; i < length; i++) {        
+        num = data[i];
+        j = i;
+        while (j >= 1) {
+            if(data[j-1] > num) {
+                swap_i_array(data, j, j-1);
+            }        
+            j--;
+        }
+    }
 }

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <C:\Users\thebournegenius\Documents\Algorithms-and-Data-Structures\Algorithms\Sorting\sortlib.h>
+#include <sortlib.h>
 
 void main() {
 
