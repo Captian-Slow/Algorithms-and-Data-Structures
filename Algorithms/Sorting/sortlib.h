@@ -102,3 +102,66 @@ void shell_sort(int *data, int length) {
         }
     }
 }
+
+
+
+// Function intended to be used in this header file only.
+// Merges the divided array.
+static void merge(int *data, int m, int l, int r) {
+
+    int n1 = m - l + 1;
+    int n2 = r - m;
+    int A1[n1], A2[n2];
+
+    int i;
+    for (i = 0; i < n1; i++)
+        A1[i] = data[l + i];
+
+    for (i = 0; i < n2; i++)        
+        A1[i] = data[m + 1 + i];
+
+    i = 0;      //Index of the first array
+    int j = 0;  //Index of the second array
+    int k = l;  //Index of the original array
+
+    while (i<n1 && j<n2) {
+
+        if(A1[i] <= A2[j]) {
+            data[k++] = A1[i++];
+        }
+        else {
+            data[k++] = A2[j++];
+        }
+    }
+
+    //Adding the remaining elements
+    while (i<n1) {
+        data[k++] = A1[i++];
+    }
+    while (j<n2) {
+        data[k++] = A2[j++];
+    }
+}
+
+// Recursively calls, and then merges.
+static void merge_driver(int *data, int l, int r) {
+    
+    // Base condition for recursive implementation.
+    if(l > r) {
+        
+        int mid = l + (r - l)/2;    // This method prevents overflow in some cases.
+        merge_driver(data, l, mid);
+        merge_driver(data, mid + 1, r);
+        merge(data, mid, l, r);
+    }
+}
+
+void merge_sort(int *data, int length) {
+
+    merge_driver(data, 0, length - 1);
+}
+
+#define merge_driver() Not_intended_for_use_outside_header
+#define merge() Not_intended_for_use_outside_header
+
+
