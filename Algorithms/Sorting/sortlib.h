@@ -118,7 +118,7 @@ static void merge(int *data, int m, int l, int r) {
         A1[i] = data[l + i];
 
     for (i = 0; i < n2; i++)        
-        A1[i] = data[m + 1 + i];
+        A2[i] = data[m + 1 + i];
 
     i = 0;      //Index of the first array
     int j = 0;  //Index of the second array
@@ -147,7 +147,7 @@ static void merge(int *data, int m, int l, int r) {
 static void merge_driver(int *data, int l, int r) {
     
     // Base condition for recursive implementation.
-    if(l > r) {
+    if(l < r) {
         
         int mid = l + (r - l)/2;    // This method prevents overflow in some cases.
         merge_driver(data, l, mid);
@@ -159,6 +159,37 @@ static void merge_driver(int *data, int l, int r) {
 void merge_sort(int *data, int length) {
 
     merge_driver(data, 0, length - 1);
+}
+
+void quick_sort(int *a, int l, int h) {
+
+    if(l < h) {
+
+        int j = partition(a, l, h);
+        quick_sort(a, l, j - 1);
+        quick_sort(a, j+1, h);
+    }
+}
+
+int partition(int *a, int l, int h) {
+
+    int i = l + 1, j = h, pivot = a[l];
+
+    while(1) {       
+
+        while (a[i] <= pivot && i <= h) 
+            i++;
+        while (a[j] > pivot && j > l)
+            j--;
+        
+        if(i < j) {
+            swap_i_array(a, i, j);
+        }
+        else {
+            swap_i_array(a, j, l);
+            return j;
+        }
+    } 
 }
 
 #define merge_driver() Not_intended_for_use_outside_header

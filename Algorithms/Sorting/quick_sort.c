@@ -3,7 +3,7 @@
 
 void main() {
 
-   int data[50000], n, i, j;
+   int data[5000], n, i, j;
    printf("Enter the number of elements: ");
    scanf("%d", &n);
    printf("The generated random numbers are: ");
@@ -14,7 +14,7 @@ void main() {
       //    printf("\n%d", data[j]);
       // }
    }
-   merge_sort(data, n);
+   quick_sort(data, 0, n - 1);
    for(i = 0; i < n; i++){
       printf("\n%d", data[i]);
    }
